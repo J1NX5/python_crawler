@@ -14,10 +14,11 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Docker
-      uses: docker/setup-docker@v2
+      uses: docker/setup-buildx-action@v1
 
     - name: Build Docker Image
       run: |
+        docker buildx create --use
         docker build -t docker.pkg.github.com/J1NX5/python_crawler/python_crawler_image:latest .
         echo ${{ secrets.REPO_TOKEN }} | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
         docker push docker.pkg.github.com/J1NX5/python_crawler/python_crawler_image:latest
