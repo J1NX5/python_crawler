@@ -4,7 +4,7 @@ FROM python:3.8-alpine
 # Setze das Arbeitsverzeichnis im Container
 WORKDIR /app
 
-RUN apk --no-cache add build-base
+RUN apk --no-cache add build-base libffi-dev
 
 # Kopiere die Anforderungen (requirements.txt) in das Arbeitsverzeichnis
 COPY requirements.txt .
