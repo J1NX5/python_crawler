@@ -14,4 +14,11 @@ class MySpider(scrapy.Spider):
     def parse(self, response):
         # Hier kannst du auf den gerenderten HTML-Code zugreifen, der auch JavaScript enthält
         # response.text enthält den HTML-Code nach der Ausführung von JavaScript
-        self.log(response.text)
+        # self.log(response.text)
+        links = response.css('a::attr(href)').extract()
+
+        # Gib die extrahierten Links aus
+        for link in links:
+            print(f'Gefundener Link: {link}')
+            # self.log() ist scrapy spezifisch
+            # self.log(f'Gefundener Link: {link}')
