@@ -18,7 +18,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t docker.pkg.github.com/j1nx5/python_crawler/python_crawler_image:latest .
+        docker build -t docker.pkg.github.com/J1NX5/python_crawler/python_crawler_image:latest .
         echo ${{ secrets.REPO_TOKEN }} | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
         docker push docker.pkg.github.com/dein-benutzername/dein-repository/dein-docker-image:latest
 
