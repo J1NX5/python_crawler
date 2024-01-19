@@ -7,6 +7,8 @@ WORKDIR /app
 # Kopiere die Anforderungen (requirements.txt) in das Arbeitsverzeichnis
 COPY requirements.txt .
 
+# Pip auf den neusten Stand bringen
+RUN python -m pip install --upgrade pip
 # Installiere die Python-Abhängigkeiten
 RUN pip install --no-cache-dir -r requirements.txt
 
