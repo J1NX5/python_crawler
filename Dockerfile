@@ -1,8 +1,10 @@
 # Verwende das offizielle Python-Image als Basis
-FROM python:3.8
+FROM python:3.8-alpine
 
 # Setze das Arbeitsverzeichnis im Container
 WORKDIR /app
+
+RUN apk --no-cache add build-base
 
 # Kopiere die Anforderungen (requirements.txt) in das Arbeitsverzeichnis
 COPY requirements.txt .
