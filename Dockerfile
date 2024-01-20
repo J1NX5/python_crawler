@@ -18,5 +18,5 @@ RUN pip install -r requirements.txt
 # Kopiere den Rest des Codes in das Arbeitsverzeichnis
 COPY . .
 
-# Führe den Python-Crawler aus
+# Führe den Python-Crawler aus bzw my_spider
 CMD ["python", "scapy", "crawl", "my_spider"]
